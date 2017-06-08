@@ -1,1 +1,1 @@
-# LaraLearn
+Laravel smart snippets
