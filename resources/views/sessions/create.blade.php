@@ -36,6 +36,8 @@
 
         </form>
 
+        <div id="example-react-comments"></div>
+
     </div>
 </div>
 @endsection

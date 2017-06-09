@@ -14,11 +14,17 @@
 
     <!-- Custom styles for this template -->
     <!-- <link href="/css/app.css" rel="stylesheet"> -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @if (str_contains(url('/'), '8000'))
+        <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    @else
+        <link href="{{ App\PrepareOnlineLink::make('/css/app.css') }}" rel="stylesheet">
+    @endif
   </head>
 
   <body>
     <div class="" id="app"></div>
+
+    {{ App\PrepareOnlineLink::make('/css/app.css') }}
 
     @include ('layouts.nav')
 
@@ -38,6 +44,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <!-- <script src="/js/app.js"></script> -->
-    <script src="{{ mix('js/app.js') }}"></script>
+    @if (str_contains(url('/'), '8000'))
+        <script src="{{ mix('js/app.js') }}"></script>
+    @else
+        <script src="{{ App\PrepareOnlineLink::make('/js/app.js') }}"></script>
+    @endif
   </body>
 </html>

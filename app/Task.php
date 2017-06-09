@@ -29,6 +29,13 @@ class Task extends Model
       return $query->where('completed', $val);
     }
 
+    public static function makeLink($link) {
+        if (str_contains(url('/'), '8000'))
+            return $link;
+        else
+            return '/public'.$link;
+    }
+
 
 
 }

@@ -1,0 +1,9 @@
+{
+    "type": "sftp",
+    "host": "dev.consupedia.com",
+    "username": "admin",
+    "password": "Guldrutan1",
+    "port": 22,
+    "remotePath": "/var/www/codeigniter",
+    "uploadOnSave": false
+}
