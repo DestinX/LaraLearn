@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Task;
+use App\User;
 //use DB; // för --> $tasks = DB::table('tasks')->get();
 
 class TasksController extends Controller
@@ -15,6 +16,12 @@ class TasksController extends Controller
       // $tasks = DB::table('tasks')->where('id', $id)->get();
       // $tasks = DB::table('tasks')->find($id);
       // return $tasks; //data passeras till view i json format
+
+      $user = User::find( auth()->user()->id );
+
+      foreach ($user->posts as $post) :
+          echo $post->title . ' : ' . $post->body . '<br>';
+      endforeach;
 
       // ELEQUENT
       $tasks = Task::all();
